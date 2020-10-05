@@ -50,7 +50,6 @@ table {
 *{
     box-sizing: border-box;
     max-width: 100%; /* Can never be larger than parent.. no horizontal scroll bar */
-    border: 1px solid grey;
 }
 /* general styles */
 
@@ -61,9 +60,6 @@ body{
     line-height: 1.5; /* multiplies line height by this num */
     font-size: 1.8rem;
     color: #4F4F4F;
-}
-body nav{
-
 }
 h1, h2, h3{
     letter-spacing: 3px;
@@ -108,6 +104,9 @@ nav{
 }
 .logo{
     width: 10%;
+    display: flex;
+    justify-content: center;   
+    align-items: center;
 }
 .logo img{
     width: 80%;
@@ -196,3 +195,67 @@ footer h3{
     text-align: right;
     margin-right: 10%;
 }
+
+/* Media Queries */
+/* When you get to any screen size 800px or smaller, apply these styles */
+@media(max-width:800px){
+    #about{
+        background-position: left;
+        background-position-x: 60%;
+    }
+    #about div{
+        margin-top: 5%;
+        width: 30%;
+    }
+    .container .text div{
+        width: 70%;
+    }
+    .img-wrapper{
+        width: 70%;
+    }
+} /*this closes the 800px media querie */
+
+/* When you get to any screen size 500px or smaller, apply these styles */
+@media(max-width:500px){
+    nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo{
+        width: 20%;
+    }
+    .links{
+        width: 100%;
+    }
+    #about{
+        justify-content: flex-start;
+    }
+    #about div{
+        margin-left: 10%;
+        width: 60%;
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container .text{
+        width: 80%;
+    }
+    .bg{
+        height: 40vh;
+    }
+    .mobile{
+        flex-direction: column-reverse;
+    }
+    .footer-parent{
+        align-items: center;
+    }
+    .left, .right{
+        text-align: center;
+        margin: 1%;
+        width: 80%;
+    }
+    .cacti{
+        display: hidden;
+    }
+} /* this closes the 500px media query
